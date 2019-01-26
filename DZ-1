@@ -1,0 +1,20 @@
+sudo su -l postgres
+psql -U postgres
+CREATE TABLE Persons (id_person serial PRIMARY KEY, last name UNIQUE NOT NULL);
+INSERT INTO Persons VALUES (100, 'James Cameron');
+INSERT INTO Persons VALUES (200, 'Alicia Vikander');
+INSERT INTO Persons VALUES (300, 'Michel Green');
+INSERT INTO Persons VALUES (400, 'Andrey Zhegalov');
+INSERT INTO Persons VALUES (500, 'Jesper Hansen');
+CREATE TABLE persons2comtent (person_id serial, contemt_id serial, type_of_person VARCHAR (355) UNIQUE NOT NULL);
+INSERT INTO persons2comtent VALUES (100, 1,  'Director');
+INSERT INTO persons2comtent VALUES (200, 2,  'Actor');
+INSERT INTO persons2comtent VALUES (300, 3,  'Writer');
+INSERT INTO persons2comtent VALUES (400, 4,  'Director of photography');
+INSERT INTO persons2comtent VALUES (500, 5,  'Composer');
+CREATE TABLE films (title VARCHAR (355) UNIQUE NOT NULL, content_id serial, country VARCHAR (355) UNIQUE NOT NULL, box_office bigint, year numeric);
+INSERT INTO films VALUES ('Avatar', 1, USA, 3, 2009);
+INSERT INTO films VALUES ('Ex machina', 2, UK, 0.36, 2014);
+INSERT INTO films VALUES ('Blade Runner_2049', 0.259, UK_USA, 3, 2017);
+INSERT INTO films VALUES ('Cocoo', 4, Russia, 0.31, 2002);
+INSERT INTO films VALUES ('The Bride', 5, Russia_UK, 0.003, 2017);
